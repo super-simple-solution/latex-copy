@@ -1,19 +1,39 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
 ---
+<script>
+	const nav = document.querySelector('main') as HTMLElement
+	const headerTitle = document.querySelector('.header-title') as HTMLElement
+	nav.addEventListener('scroll', () => {
+		if (nav.scrollTop > 100) {
+			nav.classList.add('scrolling')
+			headerTitle.style.display = 'block'
+		} else {
+			nav.classList.remove('scrolling')
+			headerTitle.style.display = 'none'
+		}
+})
+</script>
 
 <Layout title="Latex Copy&Paste.">
 	<main class=" flex justify-center text-white  py-24 sm:py-32 pb-12 sm:pb-12 main">
-		<div class="fixed top-10 left-10 w-16"> <img src="/favicon.svg" alt=""> </div>
+		<div class="header py-4  h-[80px] z-10 w-screen flex justify-center items-center"> 
+			<img class="w-12 absolute left-5" src="/favicon.svg" alt="">
+			<span class="header-title text-primary text-2xl  drop-shadow  sm:text-5xl flex ml-4 items-center justify-center">
+				Latex Copy&Paste
+			</span>
+		 </div>
 		<div>
-			<div class="flex items-center justify-center">
-				<span class="text-primary text-2xl  drop-shadow  sm:text-5xl flex ml-4 items-center justify-center">Latex Copy&Paste</h1>
+		<div class="flex items-center justify-center">
+			<span class="text-primary text-2xl  drop-shadow  sm:text-5xl flex ml-4 items-center justify-center">
+				Latex Copy&Paste
+			</span>
 		</div>
 		<div class="text-center text-current-500/90 mt-6 text-lg leading-8 drop-shadow">
 			Help you copy LaTeX from webpage and paste to anywhere
 		</div>
 		<div class="mt-10 flex items-center flex-col justify-center gap-x-6 gap-2">
-			<a href="https://chromewebstore.google.com/detail/latex-copy-paste/ifccgcphojiocdnpibgdolmbhnjccaoh" target="_blank" class="flex p-2 ring-1 ring-inset items-center text-xl gap-4 drop-shadow rounded-md bg-zinc-500/10 px-3.5 py-2.5 font-semibold text-current-500/90 shadow-sm hover:bg-zinc-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-600">
+			<a href="https://chromewebstore.google.com/detail/latex-copy-paste/ifccgcphojiocdnpibgdolmbhnjccaoh" target="_blank" class="flex p-2  items-center text-xl gap-4 drop-shadow rounded-md bg-zinc-500/10 px-3.5 py-2.5 font-semibold text-current-500/90 shadow-sm hover:bg-zinc-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-600">
 				<img class="w-6 h-6" src="/chrome-store.svg">Install from Chrome Web Store
 			</a>
 			<div class="text-current-500/90 text-xs" data-relingo-block="true">Free / No account needed / Multi-language support</div>
@@ -21,17 +41,67 @@ import Layout from '../layouts/Layout.astro';
 		<div class="mt-16 flow-root">
 			<div class="mx-auto max-w-2xl text-center">
 				<h1 class="text-xl font-bold tracking-tight drop-shadow text-primary sm:text-2xl flex gap-2 items-center justify-center" data-relingo-block="true">
-					Summaries and Bullet Points
+					Step 1 - Original Page
 				</h1>
 			</div>
-			<div class="rounded-xl" data-relingo-block="true">
-				<img alt="App screenshot" loading="lazy" width="3248" height="2112" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fscreenshot.png&amp;w=3840&amp;q=75 1x" src="/_next/image?url=%2Fscreenshot.png&amp;w=3840&amp;q=75" data-relingo-block="true">
+			<div class="mt-8  flex justify-center" data-relingo-block="true">
+				<img 
+					alt="App screenshot"
+					loading="lazy"
+					class="w-4/5 rounded-xl"
+					decoding="async"
+					data-nimg="1"
+					style="color:transparent"
+					srcset="/1.png"
+					src="/1.png"
+					data-relingo-block="true"
+				>
 			</div>
-			<div class="my-10 flex items-center flex-col justify-center gap-x-6 gap-2">
-				<a href="https://chromewebstore.google.com/detail/latex-copy-paste/ifccgcphojiocdnpibgdolmbhnjccaoh" target="_blank" class="flex p-2 ring-1 ring-inset items-center text-xl gap-4 drop-shadow rounded-md bg-zinc-500/10 px-3.5 py-2.5 font-semibold text-current-500/90 shadow-sm hover:bg-zinc-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-600">
-					<img class="w-6 h-6" src="/chrome-store.svg">Install from Chrome Web Store
-				</a>
+		</div>
+		<div class="mt-16 flow-root">
+			<div class="mx-auto max-w-2xl text-center">
+				<h1 class="text-xl font-bold tracking-tight drop-shadow text-primary sm:text-2xl flex gap-2 items-center justify-center" data-relingo-block="true">
+					Step 2 - Move the mouse over the latex formula
+				</h1>
 			</div>
+			<div class="mt-8  flex justify-center" data-relingo-block="true">
+				<img 
+					alt="App screenshot"
+					loading="lazy"
+					class="w-4/5 rounded-xl"
+					decoding="async"
+					data-nimg="2"
+					style="color:transparent"
+					srcset="/2.png"
+					src="/2.png"
+					data-relingo-block="true"
+				>
+			</div>
+		</div>
+		<div class="mt-16 flow-root">
+			<div class="mx-auto max-w-2xl text-center">
+				<h1 class="text-xl font-bold tracking-tight drop-shadow text-primary sm:text-2xl flex gap-2 items-center justify-center" data-relingo-block="true">
+					Step 3 - Click on the highlighted area to copy
+				</h1>
+			</div>
+			<div class="mt-8  flex justify-center" data-relingo-block="true">
+				<img 
+					alt="App screenshot"
+					loading="lazy"
+					class="w-4/5 rounded-xl"
+					decoding="async"
+					data-nimg="3"
+					style="color:transparent"
+					srcset="/3.png"
+					src="/3.png"
+					data-relingo-block="true"
+				>
+			</div>
+		</div>
+		<div class="py-32 flex items-center flex-col justify-center gap-x-6 gap-2">
+			<a href="https://chromewebstore.google.com/detail/latex-copy-paste/ifccgcphojiocdnpibgdolmbhnjccaoh" target="_blank" class="flex p-2  items-center text-xl gap-4 drop-shadow rounded-md bg-zinc-500/10 px-3.5 py-2.5 font-semibold text-current-500/90 shadow-sm hover:bg-zinc-500/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-600">
+				<img class="w-6 h-6" src="/chrome-store.svg">Install from Chrome Web Store
+			</a>
 		</div>
 	</main>
 	</div>
@@ -41,5 +111,26 @@ import Layout from '../layouts/Layout.astro';
 	main {
 		height: 100vh;
 		overflow-y: scroll;
+		scroll-behavior: smooth;
+	}
+	.header {
+		background-color: rgba(255, 255, 255, 0); /* 透明 */
+  	transition: background-color 0.5s ease-in-out;
+		position: fixed;
+		top: 0;
+	}
+	.header-title {
+		display: none;
+	}
+	main:not(.scrolling) .header {
+		background-color: rgba(255, 255, 255, 0); /* 透明 */
+	}
+
+	main.scrolling .header {
+		background: rgba(255, 255, 255, .1);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		background-attachment: fixed;
+		box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 	}
 </style>
